@@ -3,14 +3,14 @@ from api.models import Entry
 from datetime import date
 
 class EntrySerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
+    owner = serializers.ReadOnlyField(source='owner.username')  # type: ignore
 
-    puzzle_date = serializers.DateField(initial=date.today().strftime('%Y-%m-%d'))
-    solve_date = serializers.DateField(initial=date.today().strftime('%Y-%m-%d'))
+    puzzle_date = serializers.DateField(initial=date.today().strftime('%Y-%m-%d')) # type: ignore
+    solve_date = serializers.DateField(initial=date.today().strftime('%Y-%m-%d')) # type: ignore
 
-    checked = serializers.BooleanField(initial=True)
-    revealed = serializers.BooleanField(initial=True)
-    streak = serializers.BooleanField(initial=True)
+    checked = serializers.BooleanField(initial=True) # type: ignore
+    revealed = serializers.BooleanField(initial=True) # type: ignore
+    streak = serializers.BooleanField(initial=True) # type: ignore
 
     class Meta:
         model = Entry
