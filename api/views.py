@@ -40,4 +40,7 @@ class EntryViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
 
     def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+        puzzle_date = self.request.data["puzzle_date"]
+        day = datetime.datetime.strptime(puzzle_date,"%Y-%m-%d").strftime("%A")
+        
+        serializer.save(day=day,owner=self.request.user)
