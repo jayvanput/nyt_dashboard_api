@@ -14,4 +14,4 @@ class EntrySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Entry
-        fields = ['id', 'puzzle_date', 'solve_date', 'elapsed_seconds', 'used_help', 'streak','owner']
+        fields = ['id', 'puzzle_date', 'solve_date', 'elapsed_seconds', 'used_help', 'day','streak','owner']
