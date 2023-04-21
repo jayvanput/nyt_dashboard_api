@@ -29,6 +29,7 @@ DEBUG = config('DEBUG')
 ALLOWED_HOSTS = [config('ALLOWED_HOSTS')]
 
 CORS_TRUSTED_ORIGINS = [config('CORS_TRUSTED_ORIGINS')]
+
 # Application definition
 
 INSTALLED_APPS = [
